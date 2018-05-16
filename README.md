@@ -7,7 +7,7 @@
 
 ## Production Build
 
-* To get a production build run `npm build` from the root directory. This will create and populate a folder called "build". 
+* To get a production build run `npm run build` from the root directory. This will create and populate a folder called "build". 
 * At this point the production build is transpiled, bundled and minified. It should be ready to deploy to a server as is. 
 
 
