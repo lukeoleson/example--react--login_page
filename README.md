@@ -1,8 +1,8 @@
-# React Login Excercise
+# React Login Exercise
 
 ## Remember
 
-* You should prefix your css for browswer support. Do it manually at the very least, but ideally add it to your production build pipeline. 
+* Don't forget to add prefixing to your production pipeline. 
 
 
 ## Production Build
