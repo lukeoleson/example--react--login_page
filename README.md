@@ -5,6 +5,12 @@
 * Don't forget to add prefixing to your production pipeline. 
 
 
+## If you have extra time
+* Think about making a favicon with the 'alfred' logo from the ad.
+* Change the word "alfred" to orange in the image.
+* Make the background transparent in the logo
+
+
 ## Production Build
 
 * To get a production build run `npm run build` from the root directory. This will create and populate a folder called "build". 
