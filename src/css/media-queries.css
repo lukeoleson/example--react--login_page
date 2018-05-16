@@ -1,0 +1,75 @@
+/*  
+    1200 px and up
+    There are no special accomodations for huge screens. 
+    They will just get the css as specified in the base 
+    css file.
+*/
+/*  1024 to 1200 px 
+    Smaller computer screens (laptops) and medium to large tablets
+*/
+/*  
+    768 to 1023 px
+    Small tablets to big tablets
+*/
+@media only screen and (max-width: 1023px) {
+  .card {
+    background-image: linear-gradient(105deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 55%, transparent 55%), url(../img/hero-bg.jpg); }
+  .card .login-form {
+    padding: 25px 10px;
+    min-width: 300px; } }
+
+/*  
+    481 to 767 px 
+    Landscape phones to small tablets
+*/
+@media only screen and (max-width: 767px) {
+  .main-nav {
+    float: none;
+    text-align: center; }
+  .main-nav li {
+    display: inline-block;
+    margin: 20px 10px; }
+  .main-nav:before {
+    display: block;
+    height: 1px;
+    background-color: #000;
+    content: ' ';
+    width: 100%;
+    margin: auto; }
+  .brand-img {
+    display: none; }
+  .brand-text {
+    text-align: center;
+    color: #e67e22;
+    font-size: 50px;
+    letter-spacing: 10px;
+    padding: 10px 0px;
+    display: block; }
+  .card {
+    position: relative;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero-bg.jpg); }
+  .card .login-form {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 70%; } }
+
+/* Small phones: from 0 to 480 px */
+@media only screen and (max-width: 480px) {
+  body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero-bg.jpg);
+    background-position: top;
+    background-size: cover;
+    height: 100vh; }
+  .brand-text {
+    display: none; }
+  .main-nav:before, nav:after {
+    display: none; }
+  .main-nav a:link,
+  .main-nav a:visited {
+    color: #fff; }
+  .card {
+    background-image: none;
+    box-shadow: none; } }

@@ -22,6 +22,7 @@
 
         <link rel="stylesheet" href="../src/css/style.css">
         <link rel="stylesheet" href="../src/css/grid.css">
+        <link rel="stylesheet" href="../src/css/media-queries.css">
         <!-- These are just added for my design/dev portion. Ultimately they should
         be referenced in the components so they can be bundled -->
 
@@ -37,8 +38,9 @@
 
             <nav>
                 <div class="row">
+                    <h1 class="brand-text">Alfred</h1>
                      <!-- <a href="#"><ion-icon name="barcode" class="logo"></ion-icon></a> -->
-                    <img width="90px" class="logo" src="../src/img/alfred-logo.jpg" alt="">
+                    <img width="90px" class="brand-img" src="../src/img/alfred-logo.jpg" alt="">
                      <ul class="main-nav">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Plans</a></li>
@@ -48,7 +50,7 @@
                 </div>
             </nav>
         
-            <div class="form-section container">
+            <div class="form-section card-container">
         
                 <div class="row card">
                     
@@ -66,7 +68,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col span-1-of-8 form-icon">
-                                        <label for="username"><ion-icon name="person" size="large"></ion-icon></label>
+                                        <label for="username"><ion-icon name="person"></ion-icon></label>
                                     </div>
                                     <div class="col span-7-of-8">
                                         <input name="username" type="text" placeholder="username" required>
@@ -74,7 +76,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col span-1-of-8 form-icon">
-                                        <label for="username"><ion-icon name="finger-print" size="large"></ion-icon></label>
+                                        <label for="username"><ion-icon name="finger-print"></ion-icon></label>
                                     </div>
                                     <div class="col span-7-of-8">
                                         <input name="password" type="password" placeholder="password" required>

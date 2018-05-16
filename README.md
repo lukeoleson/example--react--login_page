@@ -3,13 +3,15 @@
 ## Remember
 
 * Don't forget to add prefixing to your production pipeline. 
+* Double check that you hit all your alt tags and other html/css style guidelines
+* Check caniuse for any HTML5, CSS3, ES6 stuff you use. 
 
 
 ## If you have extra time
 * Think about making a favicon with the 'alfred' logo from the ad.
 * Change the word "alfred" to orange in the image.
 * Make the background transparent in the logo
-
+* Add some CSS3 animations (animate the logo or maybe make the card flip over for login versus registration)
 
 ## Production Build
 

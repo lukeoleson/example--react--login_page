@@ -33,6 +33,10 @@ body {
   width: 90%;
   margin: auto; }
 
+.card-container {
+  width: 90%;
+  margin: auto; }
+
 /* -------------------------------------- */
 /*            HEADER                      */
 /* -------------------------------------- */
@@ -45,6 +49,10 @@ header {
 /* ============================================ */
 /*                  NAV BAR                     */
 /* ============================================ */
+nav {
+  width: 90%;
+  margin: auto; }
+
 .main-nav {
   float: right;
   list-style: none;
@@ -55,7 +63,7 @@ nav:after {
   height: 1px;
   background-color: #000;
   content: ' ';
-  width: 95%;
+  width: 100%;
   margin: auto;
   margin-bottom: 50px; }
 
@@ -76,8 +84,11 @@ nav:after {
 .main-nav a:active {
   color: #e67e22; }
 
-.logo {
+.brand-img {
   padding-top: 15px; }
+
+.brand-text {
+  display: none; }
 
 /* ============================================ */
 /*                  FORM AREA                   */
@@ -93,8 +104,8 @@ nav:after {
   box-shadow: 5px 5px 20px #666;
   width: 90%; }
   .card .login-form {
-    min-width: 200px;
-    max-width: 75%;
+    width: 90%;
+    min-width: 400px;
     height: 80%;
     margin: auto;
     padding: 25px 35px;
@@ -107,7 +118,8 @@ nav:after {
       border: 1px solid #999;
       border-radius: 3px;
       padding-left: 15px;
-      margin-bottom: 25px; }
+      margin-bottom: 25px;
+      margin-left: 5px; }
     .card .login-form label {
       margin: 10px 0;
       font-size: 90%; }
@@ -138,10 +150,12 @@ nav:after {
       margin-top: 5px; }
   .card fieldset {
     border: 1px solid #fff;
-    padding: 15px; }
+    padding: 15px;
+    padding-right: 30px; }
   .card legend {
     text-align: center; }
   .card .form-icon {
+    font-size: 150%;
     text-align: center; }
   .card .form-msg {
     font-size: 70%;
