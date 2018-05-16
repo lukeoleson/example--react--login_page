@@ -13,7 +13,8 @@ body {
   font-weight: 300;
   font-size: 20px;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  word-spacing: 1px; }
 
 body {
   height: 100vh;
@@ -46,7 +47,8 @@ header {
 /* ============================================ */
 .main-nav {
   float: right;
-  list-style: none; }
+  list-style: none;
+  letter-spacing: 1px; }
 
 nav:after {
   display: block;
@@ -72,12 +74,10 @@ nav:after {
 
 .main-nav a:hover,
 .main-nav a:active {
-  border-bottom: 2px solid #e67e22; }
+  color: #e67e22; }
 
 .logo {
-  padding: 15px;
-  color: #e67e22;
-  font-size: 65px; }
+  padding-top: 15px; }
 
 /* ============================================ */
 /*                  FORM AREA                   */
@@ -90,7 +90,8 @@ nav:after {
   background-image: linear-gradient(105deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 50%), url(../img/hero-bg.jpg);
   background-size: cover;
   border-radius: 3px;
-  box-shadow: 5px 5px 20px #666; }
+  box-shadow: 5px 5px 20px #666;
+  width: 90%; }
   .card .login-form {
     min-width: 200px;
     max-width: 75%;
@@ -112,16 +113,21 @@ nav:after {
       font-size: 90%; }
     .card .login-form .submit-btn {
       width: 100%;
-      background-color: #217dbb;
+      background-color: #e67e22;
       border: none;
       border-radius: 5px;
-      height: 35px;
-      margin-top: 15px;
+      height: 40px;
+      padding: 5px 0px;
       color: #fff;
-      font-size: 95%; }
+      font-size: 95%;
+      margin-bottom: 0px;
+      letter-spacing: 1px; }
+    .card .login-form .submit-btn:hover {
+      color: #333; }
     .card .login-form h2 {
       text-align: center;
-      padding-bottom: 5px; }
+      padding-bottom: 5px;
+      letter-spacing: 1px; }
     .card .login-form h2:after {
       display: block;
       height: 1px;
@@ -140,11 +146,29 @@ nav:after {
   .card .form-msg {
     font-size: 70%;
     text-align: center;
-    padding-top: 7px;
-    margin-bottom: 25px;
-    color: #cdcdcd; }
-  .card a {
+    padding-top: 6px;
+    color: #cdcdcd;
+    margin-bottom: 25px; }
+  .card a:link,
+  .card a:visited {
     text-decoration: none;
     color: #fff; }
-  .card input[type=checkbox] {
-    display: inline-block; }
+  .card a:hover,
+  .card a:active {
+    color: #e67e22; }
+  .card .remember-me {
+    text-align: right;
+    width: 100%;
+    position: relative;
+    padding-right: 10px; }
+    .card .remember-me input[type=checkbox] {
+      width: auto;
+      margin-bottom: 0px;
+      padding-top: 5px; }
+    .card .remember-me label {
+      font-size: 60%;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translate(-15px, -50%); }
