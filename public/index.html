@@ -1,40 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <!--
+        manifest.json provides metadata used when your web app is added to the
+        homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+        -->
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+        <!--
+        Notice the use of %PUBLIC_URL% in the tags above.
+        It will be replaced with the URL of the `public` folder during the build.
+        Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+        Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+        work correctly both with client-side routing and a non-root public URL.
+        Learn how to configure a non-root public URL by running `npm run build`.
+        -->
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        <link rel="stylesheet" href="../src/css/style.css">
+        <link rel="stylesheet" href="../src/css/grid.css">
+        <!-- These are just added for my design/dev portion. Ultimately they should
+        be referenced in the components so they can be bundled -->
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+
+        <title>React App</title>
+    </head>
+    <body>
+        <noscript>
+        You need to enable JavaScript to run this app.
+        </noscript>
+        <div id="root">
+
+
+            <nav>
+                <div class="row">
+                    <ion-icon name="barcode" class="logo"></ion-icon>
+                    <ul class="main-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Plans</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Sign up</a></li>
+                    </ul>
+                </div>
+            </nav>
+        
+            <div class="form-section container">
+        
+                <div class="row card">
+                    
+                    <div class="col span-1-of-2">
+                        
+                        <form action="" class="login-form">
+                            <fieldset>
+                                    
+                                <legend><ion-icon name="lock" size="large"></ion-icon></legend>
+                                <div class="row">
+                                    <h2>log in</h2>
+                                </div>
+                                <div class="row form-msg">
+                                    not registered? <a href="#">sign up</a> 
+                                </div>
+                                <div class="row">
+                                    <div class="col span-1-of-8 form-icon">
+                                        <label for="username"><ion-icon name="person" size="large"></ion-icon></label>
+                                    </div>
+                                    <div class="col span-7-of-8">
+                                        <input name="username" type="text" placeholder="username" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col span-1-of-8 form-icon">
+                                        <label for="username"><ion-icon name="finger-print" size="large"></ion-icon></label>
+                                    </div>
+                                    <div class="col span-7-of-8">
+                                        <input name="password" type="password" placeholder="password" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col span-1-of-8">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col span-7-of-8">
+                                        <input class="submit-btn" type="submit" value="login">
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="col span-3-of-8">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col span-4-of-8 form-msg">
+                                        Remember Me
+                                    </div>
+                                    <div class="col span-1-of-8">
+                                        <input type="checkbox" name="remember-me" checked>
+                                    </div>
+                                </div>
+        
+                            </fieldset>
+
+                            <div class="form-msg">
+                                <a href="#">forgot your username or password?</a>
+                            </div>
+                                
+                        </form>
+
+                    </div>
+        
+                    <div class="col span-1-of-2">
+        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="https://unpkg.com/ionicons@4.0.0/dist/ionicons.js"></script>
+    </body>
 </html>
