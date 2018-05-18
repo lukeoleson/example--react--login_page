@@ -77,8 +77,6 @@
 
     .card {
         position: relative;
-        height: 100%;
-        // width: 80%;
         background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(../img/hero-bg.jpg);
     }
     .card .login-form {
@@ -113,6 +111,11 @@
     .main-nav a:link,
     .main-nav a:visited {
         color: #fff;
+    }
+
+    a:hover,
+    a:active {
+        color: #e67e22;
     }
 
     .card {

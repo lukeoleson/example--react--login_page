@@ -22,6 +22,9 @@ body {
   background-size: cover;
   background-position: top; }
 
+input:focus {
+  outline: 0; }
+
 /* ============================================ */
 /*             REUSABLE COMPONENTS              */
 /* ============================================ */
@@ -30,10 +33,6 @@ body {
   margin: 0 auto; }
 
 .container {
-  width: 90%;
-  margin: auto; }
-
-.card-container {
   width: 90%;
   margin: auto; }
 
@@ -93,16 +92,21 @@ nav:after {
 /* ============================================ */
 /*                  FORM AREA                   */
 /* ============================================ */
-.form-section {
-  padding: 0px 0;
-  height: 525px; }
+.page-content {
+  padding: 0px 0; }
+
+.card-container {
+  width: 90%;
+  margin: auto; }
 
 .card {
   background-image: linear-gradient(105deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 50%), url(../img/hero-bg.jpg);
-  background-size: cover;
+  background-size: fill;
+  background-repeat: none;
   border-radius: 3px;
   box-shadow: 5px 5px 20px #666;
-  width: 90%; }
+  width: 90%;
+  height: 500px; }
   .card .login-form {
     width: 90%;
     min-width: 400px;
@@ -118,7 +122,7 @@ nav:after {
       border: 1px solid #999;
       border-radius: 3px;
       padding-left: 15px;
-      margin-bottom: 25px;
+      margin-bottom: 5px;
       margin-left: 5px; }
     .card .login-form label {
       margin: 10px 0;
@@ -148,12 +152,28 @@ nav:after {
       width: 150px;
       margin: auto;
       margin-top: 5px; }
+    .card .login-form .confirm-password {
+      display: none; }
+    .card .login-form .invalid input {
+      border: 1px solid red; }
+    .card .login-form .invalid input::placeholder {
+      color: red; }
+    .card .login-form .invalid .dynamic-msg {
+      color: #fff;
+      font-size: 60%;
+      padding: 2px 15px;
+      margin-bottom: 5px;
+      text-align: right; }
+    .card .login-form .invalid ion-icon {
+      color: red; }
   .card fieldset {
     border: 1px solid #fff;
     padding: 15px;
     padding-right: 30px; }
   .card legend {
-    text-align: center; }
+    text-align: center;
+    font-size: 30px;
+    padding: 0px 15px; }
   .card .form-icon {
     font-size: 150%;
     text-align: center; }

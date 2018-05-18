@@ -5,7 +5,7 @@
 * Don't forget to add prefixing to your production pipeline. 
 * Double check that you hit all your alt tags and other html/css style guidelines
 * Check caniuse for any HTML5, CSS3, ES6 stuff you use. 
-
+* Download the icons you want so you don't have to use the CDN
 
 ## If you have extra time
 * Think about making a favicon with the 'alfred' logo from the ad.
@@ -23,6 +23,4 @@
 
 * If you have pulled this repo fresh to your machine, then you can just run `npm install` from the root directory to install all your dependencies. 
 
-* Use `npm start` to start up the development environment. This will give you a live server with hot reload.
-
-* This project uses Sass, so if you want to make changes to the styling, do it in `src/scss`. (The conversion from scss to css is handled by gulp.js and is already written into the `npm start` script.)
+* Use `npm start` to start up the development environment. This will give you a live server with hot reload. In order to get your SCSS compiled you also need to run `gulp watch` from the root directory (I recommend doing it in another terminal tab so you can see any gulp errors separate from any npm errors);
