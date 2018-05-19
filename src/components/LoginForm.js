@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
 
+/*  
+*   LoginForm renders the login form as well as handles the logic
+*   for checking if the username and password entered are valid, 
+*   displaying indicators for invalid entries and passing the form
+*   data up to the App component when ready for the actual login 
+*   procedure.                                                  
+*/
 class LoginForm extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            db: {
-                users: {
-                    'user': 'pass'
-                }
-            }
-        };
-    }
-
+    // componentDidMount attaches our event listener to the submit button
     componentDidMount() {
         document.querySelector('.login-form input[type="submit"]').addEventListener('click', this.signInAttempt.bind(this)); 
     }
 
-    isValidUsername(usernameField) {
-
-        // check that the user name is not blank
-        if (usernameField.value === '' || usernameField.value.length > 15) {
+    // validateUserName checks if the username entered through the 
+    // form is in a valid format and assigns the appropriate CSS 
+    // classes to indicate as much to the user. 
+    //
+    // username:    the data input through the username 
+    // return:      true if the username is valid, false otherwise.
+    validateUserName(username) {
+        if (username === '' || username.length > 15) {
             document.getElementById('username-field').className += " invalid";
             document.querySelector('#username-field .dynamic-msg').innerText = 'enter a name between 1 and 15 chars';
             return false;
@@ -28,59 +29,51 @@ class LoginForm extends Component {
             document.getElementById('username-field').className = "row";
             document.querySelector('#username-field .dynamic-msg').innerHTML = '&nbsp';
         }
-
         return true;
     }
 
-    isValidPassword(passwordField) {
-
-        console.log('validating pass');
-        console.log(passwordField.value);
-        // check that the password is not blank
-        if (passwordField.value === '' || passwordField.value.length > 15) {
-            console.log('failed');
+    // validatePassword checks if the password entered through the 
+    // form is in a valid format and assigns the appropriate CSS 
+    // classes to indicate as much to the user. 
+    //
+    // password:    the data input through the password field. 
+    // return:      true if the password is valid, false otherwise.
+    validatePassword(password) {
+        if (password === '' || password.length > 15) {
             document.getElementById('password-field').className += " invalid";
             document.querySelector('#password-field .dynamic-msg').innerText = 'enter a word between 1 and 15 chars';
             return false;
         } else {
-            console.log('succeeded');
-
             document.getElementById('password-field').className = "row";
             document.querySelector('#password-field .dynamic-msg').innerHTML = '&nbsp';
         }
-
         return true;
     }
 
-    isValidLogin(username, password) {
-        if (this.state.db.users[username.value] === password.value) {
-            return true;
-        }
-        return false;
-    }
-
+    // signInAttempt gets triggered by the form submission event
+    // (submit button click), checks if the username and password
+    // are valid and passes the two values up to App.js for 
+    // comparison and possible log in. 
+    // 
+    // e:   the click event from the 'submit' button in the login form.
     signInAttempt(e) {
 
+        // stops the form from submitting itself and redirecting the page
         e.preventDefault();
 
-        let username = document.loginForm.user;
-        let password = document.loginForm.pass;
-        
-        if (!this.isValidUsername(username)) {
+        let username = document.loginForm.user.value;
+        let password = document.loginForm.pass.value;
+
+        if (!(this.validateUserName(username) && this.validatePassword(password))) {
             return;
         }
-        if (!this.isValidPassword(password)) {
-            return;
+        if (!this.props.onLogin(username, password)) {
+            document.getElementById('username-field').className += " invalid";
+            document.getElementById('password-field').className += " invalid";
         }
-
-        if(this.isValidLogin(username, password)) {
-            this.props.onLogin();
-        } else {
-            alert('Uh oh, that username/password combination is not valid.\nPlease check your entries and try again!')
-        }
-
     }
     
+    // render renders a card element containing a login form
     render() {
 
         return (
