@@ -2,6 +2,10 @@
 
 ## Remember
 
+* Add a footer
+* Change the background color to something more interesting
+* Add your media queries for the members area
+* Fix your media queries for the main card element (tablet size)
 * Don't forget to add prefixing to your production pipeline. 
 * Double check that you hit all your alt tags and other html/css style guidelines
 * Check caniuse for any HTML5, CSS3, ES6 stuff you use. 
