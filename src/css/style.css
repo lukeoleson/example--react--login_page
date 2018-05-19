@@ -206,3 +206,22 @@ nav:after {
       top: 50%;
       right: 15px;
       transform: translate(-15px, -50%); }
+
+.members-area {
+  position: relative;
+  background-image: url(../img/hero-bg.jpg); }
+
+.member-msg {
+  border: 1px solid black;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translate(0, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 25px 0; }
+  .member-msg h1, .member-msg p {
+    color: #fff;
+    text-align: center; }
+  .member-msg p {
+    font-size: 90%;
+    padding-top: 15px; }
