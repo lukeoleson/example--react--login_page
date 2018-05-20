@@ -1,36 +1,27 @@
 # React Login Exercise
 
-## Remember
+## Description
 
-* Add a footer
-* Change the background color to something more interesting
-* Add your media queries for the members area
-* Fix your media queries for the main card element (tablet size)
-* Don't forget to add prefixing to your production pipeline. 
-* Double check that you hit all your alt tags and other html/css style guidelines
-* Check caniuse for any HTML5, CSS3, ES6 stuff you use. 
-* Read the fake DB info from a JSON file
-* Create a fancier valid/invalid class toggling system
-
-## If you have extra time
-* Download the icons you want so you don't have to use the CDN
-* Think about making a favicon with the 'alfred' logo from the ad.
-* Change the word "alfred" to orange in the image.
-* Make the background transparent in the logo
-* Add some CSS3 animations (animate the logo or maybe make the card flip over for login versus registration)
-* 
+* This is a fully responsive login page developed using React, ES6 and SASS. 
+* It uses the npm create-react-app and Gulp.js for the development environment and production build. 
 
 
 ## Production Build
 
-* To get a production build run `npm run build` from the root directory. This will create and populate a folder called "build". 
-* At this point the production build is transpiled, bundled, minified and prefixed. It is totally ready to deploy, but you should double check that it is properly prefixed as well. 
+* To get an optimized production-ready build run `npm run build` from the root directory. This will create and populate a directory called "build". 
+* This build is bundled, transpiled, prefixed and minified with the production file names hashed.
+* You can deploy this build by uploading the contents of this directory to a static server with index.html to be used as the entry point. 
+
+* You can see a live version of this project using this exact production build method here:
+    * [React Log In Page](http://www.lukeoleson.ca/react-login/demo.html)
 
 
 ## Development
 
-* If you have pulled this repo fresh to your machine, then you can just run `npm install` from the root directory to install all your dependencies. 
+1. Run `npm install` from the root directory to install all the dependencies.
+2. Run `npm start` to get a live server with hot reload. 
+3. Run `gulp watch` to automatically compile the `.scss` files and move them to `./css`.
 
-* Use `npm start` to start up the development environment. This will give you a live server with hot reload. In order to get your SCSS compiled you also need to run `gulp watch` from the root directory (I recommend doing it in another terminal tab so you can see any gulp errors separate from any npm errors).
+* alternatively, you can run `npm start_gulp` to start both the live server and the scss compilation, but this may be more difficult for viewing errors as they will both run in the same terminal with the gulp output being overwritten by the npm output at times.
 
-* To deploy you need to just upload the `build` directory to a static server such that `index.html` is the root of the app.
+* This project uses SASS. This means that you need to make your style changes in the `.scss` files NOT the `.css` files. The files in `./src/css/` are autopopulated with the compiled `.scss` files, so if you make changes directly to the `.css` files they will be overwritten the next time you run `gulp watch` or `npm run build`.

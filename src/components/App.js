@@ -36,9 +36,13 @@ class App extends Component {
     // loginHandler compares the password passed in through the
     // form with the password in the "database" for the given user. 
     // If they match it sets the 'mode' to 'logged in'. If not, it 
-    // alerts the user. In a real situation this would likely POST 
-    // these values to the server who would compare them and then 
-    // prompt some sort of action. 
+    // alerts the user. 
+    //
+    // In a real situation we would be submitting the form with a 
+    // POST request to the server and the server would be doing this
+    // comparison as well as handling the login logic and redirect.
+    // This is really just to show the valid and invalid login
+    // attempt states. 
     loginHandler(username, password) {
 
         if (this.state.db.users[username] === password) {
@@ -52,22 +56,28 @@ class App extends Component {
         }        
     }
 
-    // render renders our outermost divs to the screen. The ternary 
-    // if inside decides whether to display the members are or the 
-    // log in form. This decision would probably be made by the server 
-    // by means of a redirect rather than this way, but this allows 
-    // the demo to work a little bit. 
+    // render renders our outermost divs to the screen as well as
+    // either our MembersArea component or our LoginForm component
+    // depending if a login has been completed successfully. 
+    //
+    // Again, this bit of logic would most likely be handled by the 
+    // server since we probably want to start a session or something
+    // here.
     render() {
         return (
             <div>
                 <Nav mode={this.state.mode} onPageChange={this.pageChangeHandler} />
-                <div className="page-content card-container">
+                <div className="card-container">
                     {
                         this.state.mode === 'logged in' ? 
                         <MembersArea /> : 
                         <LoginForm onLogin={this.loginHandler}/>
                     }
                 </div>
+
+                <footer>
+                    <p>copyright 2018 &copy;</p>
+                 </footer>
             </div>
         );
     }

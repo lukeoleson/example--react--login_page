@@ -1,25 +1,18 @@
 
 
-/*  
-    1200 px and up
-    There are no special accomodations for huge screens. 
-    They will just get the css as specified in the base 
-    css file.
-*/
-
-/*  1024 to 1200 px 
-    Smaller computer screens (laptops) and medium to large tablets
-*/
-@media only screen and (max-width: 1200px) {
-  
-}
-
+$theme-primary: #e67e22;
 
 /*  
-    768 to 1023 px
-    Small tablets to big tablets
+    Big tablets, small laptops and upwards -- 1000px 
+    There are no special accomodations for these screens. They 
+    will just get the css as specified in style.scss with a 
+    maximum width of our 'row' class
 */
-@media only screen and (max-width: 1023px) {
+
+/*  
+    Small tablets to big tablets and small laptops -- 800 to 999 px
+*/
+@media only screen and (max-width: 999px) {
     
     .card {
         background-image: linear-gradient(105deg, 
@@ -27,51 +20,50 @@
         rgba(0,0,0,.6) 55%,
         transparent 55%), 
         url(../img/hero-bg.jpg);
+
+        .login-form {
+            padding-top: 35px;     
+            min-width: 300px;
+            width: 100%;
+        }
     }
 
-    .card .login-form {
-        padding: 25px 10px;
-        min-width: 300px;
+    .members-area {
+        background-image: url(../img/hero-bg.jpg);
     }
 }
 
-
 /*  
-    481 to 767 px 
-    Landscape phones to small tablets
+    big phones to small tablets -- 501 to 799 px
 */
-@media only screen and (max-width: 767px) {
-   
-    .main-nav {
-        float: none;
-        text-align: center;
-    }
+@media only screen and (max-width: 799px) {
 
-    .main-nav li {
-        display: inline-block;
-        margin: 20px 10px;
-    }
-    
-    .main-nav:before {
-        display: block;
-        height: 1px;
-        background-color: #000;
-        content: ' ';
-        width: 100%;
-        margin: auto;
-    }
+    nav {
 
-    .brand-img {
-        display: none;
-    }
+        .brand {
 
-    .brand-text {
-        text-align: center;
-        color: #e67e22;
-        font-size: 50px;
-        letter-spacing: 10px;
-        padding: 10px 0px;
-        display: block;
+            display: block;
+            text-align: center;
+            padding-left: 0px;
+
+            &:after {
+                display: block;
+                height: 1px;
+                background-color: #000;
+                content: ' ';
+                width: 100%;
+                margin: auto;
+            }
+        }
+
+        .main-nav {
+            float: none;
+            text-align: center;
+
+            li {
+                margin: 35px 4%;
+            }
+        }
     }
 
     .card {
@@ -80,47 +72,171 @@
     }
     .card .login-form {
         position: absolute;
-        top: 40%;
+        top: 35%;
         left: 50%;
         transform: translate(-50%, -40%);
-        width: 70%;
+        width: 80%;
+    }
+
+    .members-area {
+        background-image: url(../img/hero-bg.jpg);
+    }
+
+    .member-msg {
+        font-size: 85%;
+        background-color: rgba(0,0,0,.6);
+        padding: 25px 0;
+    }
+    
+}
+
+/*  
+    big phones to small tablets -- 501 to 799 px
+*/
+@media only screen and (max-width: 599px) {
+
+    nav {
+
+        .brand {
+
+            display: block;
+            text-align: center;
+            padding-left: 0px;
+
+            &:after {
+                display: block;
+                height: 1px;
+                background-color: #000;
+                content: ' ';
+                width: 100%;
+                margin: auto;
+            }
+        }
+
+        .main-nav {
+            float: none;
+            text-align: center;
+
+            li {
+                margin: 35px 2%;
+            }
+        }
+    }
+
+    .card {
+        position: relative;
+        background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(../img/hero-bg.jpg);
+    }
+    .card .login-form {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        width: 100%;
+    }
+
+    .members-area {
+        background-image: url(../img/hero-bg.jpg);
+    }
+
+    .member-msg {
+        font-size: 85%;
+        background-color: rgba(0,0,0,.6);
+        padding: 25px 0;
     }
     
 }
 
 
-/* Small phones: from 0 to 480 px */
-@media only screen and (max-width: 480px) {
+/* Small to medium phones portrait and landscape -- 402 to 499 px */
+@media only screen and (max-width: 499px) {
     
+    nav {
+
+        &::after {
+            height: 2px;
+            background-color: $theme-primary;
+        }
+
+        .brand {
+
+            &::after {
+                height: 2px;
+                background-color: $theme-primary;
+            }
+
+            a {
+                color: #fff;
+            }
+        }
+    
+        .main-nav {
+            li {
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+   
     body {
         background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(../img/hero-bg.jpg);
         background-position: top;
         background-size: cover;
         height: 100vh;
     }
-    
-    .brand-text {
-        display: none;
-    }
 
     .main-nav:before, nav:after {
-        display: none;
-    }
-
-    .main-nav a:link,
-    .main-nav a:visited {
         color: #fff;
     }
 
-    a:hover,
-    a:active {
-        color: #e67e22;
+    .card-container {
+        width: 100%;
     }
 
     .card {
         background-image: none;
         box-shadow: none;
+        width: 100%;
+
+        .login-form {
+            width: 90%;
+            padding: 0;
+        }
     }
+
+    footer {
+        color: #fff;
+        border-top: 2px solid $theme-primary;
+    }
+
+    .logged-in {
+        background-image: url(../img/hero-bg.jpg);
+        background-position: top;
+        background-size: cover;
+        height: 100vh;
+
+    }
+    .member-msg {
+        font-size: 75%;
+        background-color: rgba(0,0,0,.6);
+        padding: 25px 0;
+    }
+}
+
+@media only screen and (max-width: 401px) {
+    
+    nav {
+        .main-nav {
+            li {
+                display: block;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+   
 }
 
 

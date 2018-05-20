@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start_gulp": "react-scripts start & gulp & wait",
-    "build": "react-scripts build",
+    "build": "gulp sass & react-scripts build & wait",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

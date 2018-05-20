@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-// theme color hex: #e67e22
-// theme color rgb: (230,126,34)
-
-$theme-light: #e88731;
-$theme-orange: #e67e22;
-$theme-blue: #3498db;
-
-
 /* ============================================ */
 /*         SETUP AND DEFAULT VALUES             */
 /* ============================================ */
+
+$theme-primary: #e67e22;
+$text-color-dark: #444;
+$color-warning: #e3301e;
 
 * {
     margin: 0;
@@ -26,13 +22,12 @@ body {
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
     word-spacing: 1px;
+    letter-spacing: 1px;
+    color: #444;
 }
 
 body {
     height: 100vh;
-    background-image: linear-gradient(to right bottom, rgba(250,250,250,.6), rgba(239,239,239, .4));
-    background-size: cover;
-    background-position: top;
 }
 
 input:focus {
@@ -49,22 +44,21 @@ input:focus {
     margin: 0 auto;
 }
 
-.container {
+a:link,
+a:visited {
+    color: $text-color-dark;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: $theme-primary;
+}
+
+.card-container {
     width: 90%;
     margin: auto;
 }
-
-/* -------------------------------------- */
-/*            HEADER                      */
-/* -------------------------------------- */
-
-header {
-    height: 100vh;
-    background-image: linear-gradient(to right bottom, rgb(230,126,34), rgb(246,206,171));
-    background-size: cover;
-    background-position: top;
-}
-
 
 /* ============================================ */
 /*                  NAV BAR                     */
@@ -73,67 +67,55 @@ header {
 nav {
     width: 90%;
     margin: auto;
+
+    .brand {
+        display: inline-block;
+        padding-top: 18px;
+        padding-left: 25px;
+        font-size: 285%;
+
+        h1 {
+            font-size: 90%;
+            letter-spacing: 5px;
+            display: none;
+        }
+    }
+
+    &:after {
+        display: block;
+        height: 1px;
+        background-color: #000;
+        content: ' ';
+        width: 100%;
+        margin: auto;
+        margin-bottom: 60px;
+    }
+
+    .main-nav {
+        float: right;
+        list-style: none;
+
+        li {
+            display: inline-block;
+            margin: 35px 20px;
+        }
+
+        a:link,
+        a:visited {
+            padding: 8px 0px;
+            text-transform: uppercase;
+            font-size: 80%;
+        }
+    }
 }
 
-.main-nav {
-    float: right;
-    list-style: none;
-    letter-spacing: 1px;
-}
-
-nav:after {
-    display: block;
-    height: 1px;
-    background-color: #000;
-    content: ' ';
-    width: 100%;
-    margin: auto;
-    margin-bottom: 50px;
-}
-
-.main-nav li {
-    display: inline-block;
-    margin: 35px 20px;
-}
-
-.main-nav a:link,
-.main-nav a:visited {
-    padding: 8px 0px;
-    color: #000;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 80%;
-    border-bottom: 2px solid transparent;
-}
-
-.main-nav a:hover,
-.main-nav a:active {
-    color: $theme-orange;
-}
-
-.brand-img {
-    padding-top: 15px;
-}
-
-.brand-text {
-    display: none;
-}
 
 /* ============================================ */
 /*                  FORM AREA                   */
 /* ============================================ */
 
-.page-content {
-    padding: 0px 0;
-    // height: 500px;
-}
-
-.card-container {
-    width: 90%;
-    margin: auto;
-}
-
 .card {
+
     background-image: linear-gradient(105deg, 
         rgba(0,0,0,.6) 0%,
         rgba(0,0,0,.6) 50%,
@@ -151,9 +133,7 @@ nav:after {
         min-width: 400px;
         height: 80%;
         margin: auto;
-        // margin-left: 40%;
-        // margin-right: 60%;
-        padding: 25px 35px;
+        padding: 35px 35px;
         background-color: transparent;
         border-radius: 5px;
         color: #fff;
@@ -163,7 +143,7 @@ nav:after {
             width: 100%;
             border: 1px solid #999;
             border-radius: 3px;
-            padding-left: 15px;
+            padding-left: 10px;
             margin-bottom: 5px;
             margin-left: 5px;
         }
@@ -175,7 +155,7 @@ nav:after {
 
         .submit-btn {
             width: 100%;
-            background-color: $theme-orange;
+            background-color: $theme-primary;
             border: none;
             border-radius: 5px;
             height: 40px;
@@ -194,7 +174,7 @@ nav:after {
         h2 {
             text-align: center;
             padding-bottom: 5px;
-            letter-spacing: 1px;        
+            letter-spacing: 2px;        
         }
 
         h2:after {
@@ -207,42 +187,49 @@ nav:after {
             margin-top: 5px;            
         }
 
-        .confirm-password {
-            display: none;
+        a:hover,
+        a:active {
+            color: $theme-primary;
         }
 
-        .invalid input {
-            border: 1px solid red;
-        }
-        .invalid input::placeholder {
-            color: red;
-        }
-        .invalid .dynamic-msg {
-            color: #fff;
-            font-size: 60%;
-            padding: 2px 15px;
-            margin-bottom: 5px;
-            text-align: right;
-        }
-        .invalid ion-icon {
-            color: red;
-        }
-    
+        .invalid {
 
+            input {
+                border: 1px solid $color-warning;
 
+                &::placeholder {
+                    color: $color-warning;
+                }
+
+            }
+
+            .dynamic-msg {
+                color: #fff;
+                font-size: 60%;
+                padding: 2px 15px;
+                margin-bottom: 5px;
+                text-align: right;
+            }
+
+            ion-icon {
+                color: $color-warning;
+            }
+        }
     }
-
-    
 
     fieldset {
         border: 1px solid #fff;
         padding: 15px;
         padding-right: 30px;
+
+        & + .invalid {
+            border: 1px solid $color-warning;
+        }
     }
 
     legend {
         text-align: center;
-        font-size: 30px;
+        font-size: 150%;
         padding: 0px 15px;
     }
 
@@ -263,11 +250,6 @@ nav:after {
     a:visited {
         text-decoration: none;
         color: #fff;
-    }
-
-    a:hover,
-    a:active {
-    color: $theme-orange;
     }
 
     .remember-me {
@@ -293,12 +275,18 @@ nav:after {
     }    
 }
 
+
+/* ============================================ */
+/*              MEMBERS AREA                    */
+/* ============================================ */
+
 .members-area {
     position: relative;
     background-image: url(../img/hero-bg.jpg);
 }
 
 .member-msg {
+    
     h1, p {
         color: #fff;
         text-align: center;
@@ -309,11 +297,28 @@ nav:after {
         padding-top: 15px;
     }
 
-    border: 1px solid black;
     position: absolute;
     top: 50%;
     width: 100%;
     transform: translate(0, -50%);
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.65);
     padding: 25px 0;
+}
+
+
+/* ============================================ */
+/*                  FOOTER                      */
+/* ============================================ */
+
+footer {
+
+    text-align: center;
+    margin-top: 100px;
+    height: 50px;
+    border-top: 1px solid #555;
+
+    p {
+        margin: 35px 0;
+        font-size: 65%;
+    }
 }

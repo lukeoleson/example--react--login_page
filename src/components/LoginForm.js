@@ -59,6 +59,7 @@ class LoginForm extends Component {
     signInAttempt(e) {
 
         // stops the form from submitting itself and redirecting the page
+        // se we can implement our own logic first.
         e.preventDefault();
 
         let username = document.loginForm.user.value;
@@ -70,7 +71,10 @@ class LoginForm extends Component {
         if (!this.props.onLogin(username, password)) {
             document.getElementById('username-field').className += " invalid";
             document.getElementById('password-field').className += " invalid";
+        } else {
+            document.querySelector('body').className += " logged-in";
         }
+
     }
     
     // render renders a card element containing a login form
