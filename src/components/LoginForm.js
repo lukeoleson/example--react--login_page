@@ -68,6 +68,21 @@ class LoginForm extends Component {
         if (!(this.validateUserName(username) && this.validatePassword(password))) {
             return;
         }
+
+        /* INSERT FORM SUBMISSION LOGIC BELOW */
+
+        /* If there was a backend for this form then this is most likely
+        where I would be submitting the form data object. The backend would
+        probably start a session and redirect the user to a members area
+        where new components would be rendered and a new state started
+        with the member-specific data */
+
+        /* INSERT FORM SUBMISSION LOGIC ABOVE */
+
+        // this bit of code is just to make the demo work and to approximate
+        // what we would be doing in a real app. It passes the username and 
+        // password up to App.js who then compares the two, logs the user in
+        // (or not) and then sets the app state accordingly.
         if (!this.props.onLogin(username, password)) {
             document.getElementById('username-field').className += " invalid";
             document.getElementById('password-field').className += " invalid";
