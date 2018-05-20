@@ -23,8 +23,8 @@
 
 ## Starting the Development Environment 
 
-2. Run `npm start` to get a live server with hot reload. 
-3. Run `gulp watch` to automatically compile the `.scss` files and move them to `./css`.
+1. Run `npm start` to get a live server with hot reload. 
+1. Run `gulp watch` to automatically compile the `.scss` files and move them to `./css`.
 
     * alternatively, you can run `npm start_gulp` to start both the live server and the scss compilation, but this may be more difficult for viewing errors as they will both run in the same terminal with the gulp output being overwritten by the npm output at times.
 
