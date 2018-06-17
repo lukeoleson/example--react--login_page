@@ -9,7 +9,7 @@
 ## Demo
 
 * You can see a live version of this project using this exact production build from the repo here:
-    * [React Log In Page](http://www.lukeoleson.ca/react-login/demo.html)
+    * [React Log In Page](http://www.lukeoleson.ca/react_login/demo.html)
 
 * The following username and password are hard-coded into the demo to allow you to "test" the login procedure. The form of course is not actually submitted in this case since there is no back-end for this project at this point. 
     * username: `user`
